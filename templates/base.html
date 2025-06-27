@@ -1,0 +1,43 @@
+{% load static %}
+{% include 'shared/header.html' %}
+
+<title>{% block title %}{% endblock %} - Taskly</title>
+</head>
+    <body>
+        <header>
+            <img src="{% static 'core/brandlogo-dark.png' %}">
+            <nav>
+                <a href="{% url 'tasks:index' %}">tasks</a>
+                <a href="{% url 'tasks:pendingTasks' %}">pending</a>
+                <a href="{% url 'tasks:runningTasks' %}">running</a>
+                <a href="{% url 'tasks:scheduledTasks' %}">scheduled</a>
+                <a href="{% url 'tasks:completedTasks' %}">completed</a>
+                {% if request.user.is_authenticated %}
+                    <form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">logout</button>
+                    </form>
+                {% else %}
+                        <button><a href="{% url 'login' %}">login</a></button>
+                        <button><a href="{% url 'register' %}">register</a></button>
+                {% endif %}
+            </nav>
+        </header>
+
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer style="text-align: center;">
+            <p>Contact: charles@example.com</p>
+            <p>&copy; 2025 Charles Igboanugo. All rights reserved.</p>
+        </footer>
+
+{% include 'shared/footer.html' %}

@@ -1,0 +1,12 @@
+{% load static %}
+{% include 'shared/header.html' %}
+    <title>Register - Taskly</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">register</button>
+</form>
+
+{% include 'shared/footer.html' %}

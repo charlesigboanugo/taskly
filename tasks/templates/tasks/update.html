@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Update task{% endblock %}
+
+{% block content %}
+        <h1>update task</h1>
+
+        {% if task.is_completed %}
+            <p>completed on:<span>{{ task.due_at }}</span></p>
+        {% elif  task.start_at > now %}
+            <p>start date:<span>{{ task.start_at }}</span></p>
+        {% elif task.due_at > now and now >= task.start_at %}
+            <p>end date:<span>{{ task.due_at }}</span></p>
+        {% else %}
+            <p>past due on:<span>{{ task.due_at }}</span></p>
+        {% endif %}
+
+        <h3>fill these</h3>
+        <form method="post", action="{% url 'tasks:updateTask' task.pk %}">
+            {% csrf_token %} 
+            <input type="text" placeholder="title" value="{{ task.title }}" name="title">
+            <input type="textarea" value="{{ task.description }}" name="description">
+            {% if task.is_completed == False %}
+                <input type="date" value="{{ task.due_at|date:'Y-m-d'}}" min="{{ min_1_day|date:'Y-m-d'}}" name="due_at">
+            {% endif %}
+            <button type="submit">update</button>
+        </form>
+{% endblock %}

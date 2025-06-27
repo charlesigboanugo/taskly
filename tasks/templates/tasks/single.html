@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}{{ task.title }}{% endblock %}
+
+{% block content %}
+        <article>
+            <h1>{{task.title}}</h1>
+            <section>
+                {% if task.is_completed %}
+                    <div>
+                        <i class="fa-solid fa-circle-check"></i><span>completed</span>
+                        <span>completed on {{ task.due_at }}</span>
+                    </div>
+                {% elif  task.start_at > now %}
+                    <div>
+                        <i class="fa-solid fa-bell"></i><span>scheduled</span>
+                        <span>starts on {{ task.start_at }}</span>
+                    </div>
+                {% elif task.due_at > now and now >= task.start_at %}
+                    <div>
+                        <i class="fa-solid fa-arrows-rotate"></i><span>running</span>
+                        <span>ends on {{ task.due_at }}</span>
+                    </div>
+                {% else %}
+                    <div>
+                        <i class="fa-solid fa-hourglass-half"></i><span>pending</span>
+                        <span>past due - {{ task.due_at }}</span>
+                    </div>
+                {% endif %}
+            </section>
+            <p>{{task.description}}</p>
+            <!--<section>
+                <h3>stages</h3>
+                <ol>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+            </section> -->
+            <section>
+                {% if task.is_completed is False and now >= start_at %}
+                    <form action="{%url 'tasks:completeTask' task.pk %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">complete</button>
+                    </form>
+                {% endif%}
+                {% if task.is_completed is False %}
+                    <a href="{%url 'tasks:updateTask' task.pk %}">update</a>
+                {% endif %}
+                <form action="{%url 'tasks:deleteTask' task.pk %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">delete</button>
+                </form>
+            </section>
+        </article>
+{% endblock %}

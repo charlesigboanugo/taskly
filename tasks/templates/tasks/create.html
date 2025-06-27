@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}create task{% endblock %}
+
+{% block content %}
+        <h1>create task</h1>
+        <h3>fill these</h3>
+        <form action="{% url 'tasks:createTask' %}" method="post">
+            {% csrf_token %}
+            <input type="text" placeholder="title" name="title">
+            <input type="textarea", name="description">
+            <input type="date" min="{{ now |date:'Y-m-d'}}" name="start_at">
+            <input type="date" min="{{ min_1_day|date:'Y-m-d'}}" name=due_at>
+            <button type="submit">create</button>
+        </form>
+{% endblock %}
