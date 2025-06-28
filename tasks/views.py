@@ -34,23 +34,26 @@ def createTask(request):
 
 @login_required
 def singleTask(request, task_id):
+    now = date.today()
     user_id = request.user.pk
     task = get_object_or_404(Task, pk=task_id, user_id=user_id)
-    return render (request, "tasks/single.html", {"task": task})
+    return render (request, "tasks/single.html", {"task": task, "now": now})
    
 @login_required
 def updateTask(request, task_id):
+    now = date.today()
     user_id = request.user.pk
     task = get_object_or_404(Task, pk=task_id, user_id=user_id)
     if request.method == "POST":
-        allowed_fields = ['title', 'description']  # only fields you want to update
-        if task.status == 3:
+        allowed_fields = ['title', 'description', ]  # only fields you want to update
+        if task.due_at <= now:
             allowed_fields.append("due_at")
+        if task.start_at > now:
+            allowed_fields.append("start_at")
         update_data = {key: request.POST[key] for key in allowed_fields if key in request.POST}
         Task.objects.filter(pk=task_id).update(**update_data)
         return redirect(f'/tasks/{task_id}')
     else:
-        now = date.today()
         now_plus_1_day = date.today() + timedelta(days=1)
         context = {
             "task": task,
@@ -78,27 +81,31 @@ def completeTask(request, task_id):
     
 @login_required
 def completedTasks(request):
+    now = date.today()
     user_id = request.user.pk
     completed = Task.objects.filter(user_id=user_id, is_completed=True)
-    return render(request, "tasks/index.html", {"tasks_list": completed})
+    return render(request, "tasks/index.html", {"tasks_list": completed, "now": now})
 
 @login_required
 def pendingTasks(request):
+    now = date.today()
     user_id = request.user.pk
     now = date.today()
     pending = Task.objects.filter(user_id=user_id, due_at__lte=now, is_completed=False)
-    return render(request, "tasks/index.html", {"tasks_list": pending})
+    return render(request, "tasks/index.html", {"tasks_list": pending, "now": now})
 
 @login_required
 def runningTasks(request):
+    now = date.today()
     user_id = request.user.pk
     now = date.today()
     pending = Task.objects.filter(user_id=user_id, due_at__gt=now, start_at__lte=now, is_completed=False)
-    return render(request, "tasks/index.html", {"tasks_list": pending})
+    return render(request, "tasks/index.html", {"tasks_list": pending, "now": now})
 
 @login_required
 def scheduledTasks(request):
+    now = date.today()
     user_id = request.user.pk
     now = date.today()
     scheduled = Task.objects.filter(user_id=user_id, due_at__gt=now, start_at__gt=now, is_completed=False)
-    return render(request, "tasks/index.html", {"tasks_list": scheduled})
+    return render(request, "tasks/index.html", {"tasks_list": scheduled, "now": now})

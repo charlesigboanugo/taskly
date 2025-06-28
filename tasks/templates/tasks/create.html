@@ -3,14 +3,20 @@
 {% block title %}create task{% endblock %}
 
 {% block content %}
-        <h1>create task</h1>
-        <h3>fill these</h3>
-        <form action="{% url 'tasks:createTask' %}" method="post">
-            {% csrf_token %}
-            <input type="text" placeholder="title" name="title">
-            <input type="textarea", name="description">
-            <input type="date" min="{{ now |date:'Y-m-d'}}" name="start_at">
-            <input type="date" min="{{ min_1_day|date:'Y-m-d'}}" name=due_at>
-            <button type="submit">create</button>
-        </form>
+        <article id="create" class="singlearticle">
+            <h1>create task</h1>
+            <h3>fill these</h3>
+            <form action="{% url 'tasks:createTask' %}" method="post">
+                {% csrf_token %}
+                <label for="title">title</label>
+                <input type="text" name="title" id="title" required>
+                <label for="description">description</label> 
+                <input type="textarea" name="description" id="description" required>
+                <label for="start_at">start date</label> 
+                <input type="date" min="{{ now |date:'Y-m-d'}}" id="start_at" name="start_at" required>
+                <label for="due_at">end date</label>
+                <input type="date" min="{{ min_1_day|date:'Y-m-d'}}" id="due_at" name=due_at required>
+                <button type="submit" class="submit">create</button>
+            </form>
+        </article>
 {% endblock %}

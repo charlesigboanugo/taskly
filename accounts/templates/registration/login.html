@@ -1,14 +1,15 @@
 {% load static %}
 {% include 'shared/header.html' %}
-{% block title %}Login{% endblock %}
-
-<title>Login - Taskly</title>
+    <title>Login - Taskly</title>
 </head>
 <body>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-</form>
+    <div class="centerpage">
+        <img src="{% static 'core/brandlogo-dark.png' %}">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="submit">Login</button>
+        </form>
+    </div>
 
 {% include 'shared/footer.html' %}

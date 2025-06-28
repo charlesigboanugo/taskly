@@ -4,8 +4,10 @@
 <title>{% block title %}{% endblock %} - Taskly</title>
 </head>
     <body>
-        <header>
-            <img src="{% static 'core/brandlogo-dark.png' %}">
+        <header class="group2">
+            <div class="logo">
+                <img src="{% static 'core/brandlogo-dark.png' %}">
+            </div>
             <nav>
                 <a href="{% url 'tasks:index' %}">tasks</a>
                 <a href="{% url 'tasks:pendingTasks' %}">pending</a>
@@ -15,29 +17,35 @@
                 {% if request.user.is_authenticated %}
                     <form action="{% url 'logout' %}" method="post">
                         {% csrf_token %}
-                        <button type="submit">logout</button>
+                        <button type="submit" class="submit">logout</button>
                     </form>
                 {% else %}
-                        <button><a href="{% url 'login' %}">login</a></button>
-                        <button><a href="{% url 'register' %}">register</a></button>
+                    <a href="{% url 'login' %}" class="submit">login</a>
+                    <a href="{% url 'register' %}" class="submit">register</a>
                 {% endif %}
             </nav>
         </header>
-
         {% if messages %}
-            <ul class="messages">
+            <section class="messages group2">
                 {% for message in messages %}
-                    <li class="{{ message.tags }}">{{ message }}</li>
+                    <p class="{{ message.tags }}">{{ message }}</p>
                 {% endfor %}
-            </ul>
+            </section>
         {% endif %}
-
+        <script async>
+            window.onload = () => {
+                setTimeout(() => {
+                    const msg = document.querySelector('.messages');
+                    if (msg) msg.classList.add('hide');
+                }, 3000);
+            };
+        </script>
         <main>
             {% block content %}{% endblock %}
         </main>
         <footer style="text-align: center;">
-            <p>Contact: charles@example.com</p>
-            <p>&copy; 2025 Charles Igboanugo. All rights reserved.</p>
+            <div><span>Contact: charles@example.com</span></div>
+            <div><span>&copy; 2025 Charles Igboanugo. All rights reserved.</span></div>
         </footer>
 
 {% include 'shared/footer.html' %}

@@ -3,25 +3,26 @@
 {% block title %}Tasks{% endblock %}
 
 {% block content %}
-    <h1>all tasks</h1>
-    {% for task in tasks_list %}
-        <article>
-            {% if task.is_completed %}
-                <div><i class="fa-solid fa-circle-check"></i><span>completed</span></div>
-            {% elif  now >= task.due_at %}
-                <div><i class="fa-solid fa-hourglass-half"></i><span>pending</span></div>
-            {% elif task.due_at > now and now >= task.start_at %}
-                <div><i class="fa-solid fa-arrows-rotate"></i><span>running</span></div>
-            {% else %}
-                <div><i class="fa-solid fa-bell"></i><span>scheduled</span></div>
-            {% endif %}
-
-            <h3>{{ task.title }}</h3>
-            <p>
-                <span>{{ task.description }}</span>
-                <span>...</span>
-            </p>
-            <button><a href="{% url 'tasks:singleTask' task.pk %}">view task</a></button>
-        </article>
-    {% endfor %}
+    <section class="alltasks">
+        <h1>all tasks</h1>
+        {% for task in tasks_list %}
+            <article class="group2">
+                {% if task.is_completed %}
+                    <div><i class="fa-solid fa-circle-check"></i><span>   completed</span></div>
+                {% elif  now >= task.due_at %}
+                    <div><i class="fa-solid fa-hourglass-half"></i><span>   pending</span></div>
+                {% elif task.due_at > now and now >= task.start_at %}
+                    <div><i class="fa-solid fa-arrows-rotate"></i><span>   running</span></div>
+                {% else %}
+                    <div><i class="fa-solid fa-bell"></i><span>   scheduled</span></div>
+                {% endif %}
+                <h3>{{ task.title }}</h3>
+                <p>
+                    {{ task.description }}
+                    <span>...</span>
+                </p>
+                <a href="{% url 'tasks:singleTask' task.pk %}" class="submit">view task</a>
+            </article>
+        {% endfor %}
+    </section>
 {% endblock %}

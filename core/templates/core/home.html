@@ -3,26 +3,39 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    <section>
+    <section id="hero" class="group1">
         <img src="{% static 'core/brandlogo-dark.png' %}">
-        <h1>TASKLY</h1>
+        <h1>taskly</h1>
+        <p>A smart, simple tool to help you plan, track, and complete tasks with ease.</p>
+        <p>(Alternative: “Your personal assistant for a better, calmer workflow.”)</p>
     </section>
-    <section>
-        <h2>about</h2>
-        <p>bbbbb</p>
-    </section>
-    <section>
-        <h2>features</h2>
+    <section id="about" class="flex-div group2">
         <div>
-            <div><p></p><i></i></div>
-            <div><P></P><i></i></div>
-            <div><P></P><i></i></div>
-            <div><P></P><i></i></div>
-            <div><P></P><i></i></div>
+            <h2>about</h2>
+            <p>Taskly is built to make productivity feel natural. Whether you're planning your day, a project, or just your next meal, Taskly helps you keep it all in one place — distraction-free and beautifully simple.</p>
+        </div>
+        <img src="{% static 'core/about.svg' %}" alt="About illustration" class="flex-img">
+    </section>
+    <section id="features" class="group1">
+        <h2>features</h2>
+        <div class="flex-div">
+            <div>
+                <i class="fa-solid fa-calendar-days"></i>
+                <h3>Timely Nudges</h3>
+            </div>
+            <div>
+                <i class="fa-solid fa-bolt-lightning"></i>
+                <h3>Quick Add </h3>
+            </div>
+            <div>
+                <i class="fa-solid fa-bars-progress"></i>
+                <h3>Task Insights </h3>
+            </div>
         </div>
     </section>
-    <section>
-        <h3></h3>
-        <button></button>
+    <section id="cta" class="group2">
+        <h2>Ready to take control of your tasks?</h2>
+        <p>Get started now and discover a faster, clearer, and more effective way to stay organized, manage your tasks, and take control of your day.</p>
+        <a href="{% url 'tasks:index' %}" class="submit">get started now</a>
     </section>
 {% endblock %}

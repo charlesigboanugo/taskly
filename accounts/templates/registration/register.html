@@ -3,10 +3,13 @@
     <title>Register - Taskly</title>
 </head>
 <body>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">register</button>
-</form>
+    <div class="centerpage">
+        <img src="{% static 'core/brandlogo-dark.png' %}">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="submit">register</button>
+        </form>
+    </div>
 
 {% include 'shared/footer.html' %}

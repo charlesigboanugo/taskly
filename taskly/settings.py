@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ftvd=%1)q_2(984h&%(wxumr_1ll4hj_u%)p7f0efr^mjiylyu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
@@ -128,3 +128,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Only needed during development to find static files in app/static folders
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # this is where you put your custom static files
+]
+
+# Where collectstatic will gather all static files for production
+STATIC_ROOT = BASE_DIR / "staticfiles"
