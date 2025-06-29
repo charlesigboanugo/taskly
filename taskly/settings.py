@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ftvd=%1)q_2(984h&%(wxumr_1ll4hj_u%)p7f0efr^mjiylyu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "13.49.67.8", "ec2-13-49-67-8.eu-north-1.compute.amazonaws.com"]
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
@@ -129,10 +129,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Only needed during development to find static files in app/static folders
-STATICFILES_DIRS = [
-    BASE_DIR / "static",  # this is where you put your custom static files
-]
 
 # Where collectstatic will gather all static files for production
 STATIC_ROOT = BASE_DIR / "staticfiles"
