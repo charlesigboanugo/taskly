@@ -7,13 +7,13 @@
             <h1>update - {{ task.title }}</h1>
 
             {% if task.is_completed %}
-             <p>completed on:<span>{{ task.due_at }}</span></p>
+             <p>Completed on:     <span>{{ task.due_at }}</span></p>
             {% elif  task.start_at > now %}
-                <p>start date:<span>{{ task.start_at }}</span></p>
+                <p>Start date:     <span>{{ task.start_at }}</span></p>
             {% elif task.due_at > now and now >= task.start_at %}
-             <p>end date:<span>{{ task.due_at }}</span></p>
+             <p>End date:     <span>{{ task.due_at }}</span></p>
             {% else %}
-                <p>past due on:<span>{{ task.due_at }}</span></p>
+                <p>Past due on:     <span>{{ task.due_at }}</span></p>
             {% endif %}
 
             <h3>fill these</h3>

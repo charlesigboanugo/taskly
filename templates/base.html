@@ -6,14 +6,14 @@
     <body>
         <header class="group2">
             <div class="logo">
-                <img src="{% static 'core/brandlogo-dark.png' %}">
+		    <a href="{% url 'core:home' %}"><img src="{% static 'core/brandlogo-dark.png' %}"><a/>
             </div>
             <nav>
-                <a href="{% url 'tasks:index' %}">tasks</a>
-                <a href="{% url 'tasks:pendingTasks' %}">pending</a>
-                <a href="{% url 'tasks:runningTasks' %}">running</a>
-                <a href="{% url 'tasks:scheduledTasks' %}">scheduled</a>
-                <a href="{% url 'tasks:completedTasks' %}">completed</a>
+                <a href="{% url 'tasks:index' %}">Tasks</a>
+                <a href="{% url 'tasks:pendingTasks' %}">Pending</a>
+                <a href="{% url 'tasks:runningTasks' %}">Running</a>
+                <a href="{% url 'tasks:scheduledTasks' %}">Scheduled</a>
+                <a href="{% url 'tasks:completedTasks' %}">Completed</a>
                 {% if request.user.is_authenticated %}
                     <form action="{% url 'logout' %}" method="post">
                         {% csrf_token %}
@@ -37,14 +37,14 @@
                 setTimeout(() => {
                     const msg = document.querySelector('.messages');
                     if (msg) msg.classList.add('hide');
-                }, 3000);
+                }, 5000);
             };
         </script>
         <main>
             {% block content %}{% endblock %}
         </main>
         <footer style="text-align: center;">
-            <div><span>Contact: charles@example.com</span></div>
+            <div><span>Contact: charlesigboanugo033@gmail.com</span></div>
             <div><span>&copy; 2025 Charles Igboanugo. All rights reserved.</span></div>
         </footer>
 

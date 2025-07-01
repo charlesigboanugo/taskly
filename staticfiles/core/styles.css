@@ -47,7 +47,7 @@ a, span{
     font-family: 'Open sans', sans-serif;
 }
 a {
-    text-transform: capitalize;
+    display: inline-block;
     text-decoration: none;
 }
 header{
@@ -112,14 +112,16 @@ section, .singlearticle{
     border-radius: 20px;
 }
 .singletask > p{
-    margin-bottom: 64px;
+    margin: 48px, 0, 72px, 0;
 }
 .singletask{
     text-transform: capitalize;
 }
+.singletask p{
+    text-transform: none;
+}
 .alltasks p{
     margin-bottom: 32px;
-    text-transform: capitalize;
 }
 .alltasks article > div{
     margin-bottom: 16px;
@@ -137,12 +139,41 @@ section, .singlearticle{
     display: block;
     width: 40%;
 }
+#about .flex-div, #features .flex-div{
+    gap: 96px;
+}
 .flex-div{
     display: flex;
     flex-direction: row;
-    gap:96px;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.alltasks h1{
+    margin-bottom:0;
+}	
+.alltasks .flex-div{
+    margin-bottom:64px;
+    align-items: center;
+    justify-content:start;
 }
 
+.alltasks .flex-div > h1{
+    flex-basis:70%;
+}
+
+.alltasks .flex-div > a{
+    animation: newbutton 2s ease-in-out 0.5s;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+}
+@keyframes newbutton{
+    0%{
+        padding: 20px 35px 20px 35px;
+    }
+    100%{
+        padding:15px 30px 15px 30px;
+    }
+}
 #about > div{
     display: flex;
     flex-direction: column;
@@ -157,9 +188,8 @@ section, .singlearticle{
 #features {
     text-align: center;
 }
-#features .flex-div{
-    justify-content: space-between;
-}
+
+
 #cta {
     text-align: center;
 }
@@ -178,9 +208,12 @@ section, .singlearticle{
     border-radius: 10px;
     color:#FFFFFF;
     background-color: #FF9F45;
+    box-shadow: 0 0 12px rgba(255, 159, 69, 0.4), 0 0 24px rgba(255, 159, 69, 0.15);
+    transition: box-shadow 0.3s ease;
 }
 .submit:hover{
     padding: 12px 30px 12px 30px;
+    box-shadow: 0 0 16px rgba(255, 159, 69, 0.5), 0 0 32px rgba(255, 159, 69, 0.2);
 }
 
 #cta p{
@@ -197,14 +230,16 @@ input, label{
     line-height: inherit;
     font-family: 'Open sans', sans-serif;
     color: inherit;
-    text-transform:capitalize;
     width: 100%;
     text-align: left;
 }
 label{
+    text-transform:capitalize;
     margin-bottom: 16px;
 }
 input{
+    text-transform: normal;
+    box-sizing:border-box;
     border-radius: 8px;
     color:#000000;
     padding: 10px 16px;
@@ -226,7 +261,7 @@ input{
     text-align: center;
 }
 #update button, #create button{
-    width:50%;
+    width:100%;
 }
 .centerpage{
     width: 500px;
@@ -250,7 +285,6 @@ input{
     line-height: inherit;
     font-family: 'Open sans', sans-serif;
     color: inherit;
-    text-transform:capitalize;
     width: 100%;
     text-align: left;
     box-sizing: border-box;
@@ -259,6 +293,10 @@ input{
     font-family: 'Open sans', sans-serif;
     line-height: 2;
     margin: 40px 0;
+}
+.centerpage > a{
+    display: block;
+    text-align: center;
 }
 .centerpage button{
     margin-top: 30px;

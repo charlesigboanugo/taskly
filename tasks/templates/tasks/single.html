@@ -8,22 +8,22 @@
             {% if task.is_completed %}
                 <div>
                     <i class="fa-solid fa-circle-check"></i><span>completed</span>
-                    <p>completed on {{ task.due_at }}</p>
+                    <p>Completed on {{ task.due_at }}</p>
                 </div>
             {% elif  task.start_at > now %}
                 <div>
                     <i class="fa-solid fa-bell"></i><span>scheduled</span>
-                    <p>starts on {{ task.start_at }}</p>
+                    <p>Starts on {{ task.start_at }}</p>
                 </div>
             {% elif task.due_at > now and now >= task.start_at %}
                 <div>
                     <i class="fa-solid fa-arrows-rotate"></i><span>running</span>
-                    <p>ends on {{ task.due_at }}</p>
+                    <p>Ends on {{ task.due_at }}</p>
                 </div>
             {% else %}
                 <div>
                     <i class="fa-solid fa-hourglass-half"></i><span>pending</span>
-                    <p>past due - {{ task.due_at }}</p>
+                    <p>Past due - {{ task.due_at }}</p>
                 </div>
             {% endif %}
             <p>{{task.description}}</p>
