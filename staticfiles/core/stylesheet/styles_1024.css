@@ -1,0 +1,189 @@
+@media screen and (max-width: 1024px) {
+    html{
+        font-size: 17px;
+    }
+    body{
+        line-height: 1.6;
+    }
+    h1{
+        font-size: 48px;
+    }
+    h2{
+        font-size: 40px;
+    }
+    h3{
+        font-size:27px;
+    }
+    span{
+        font-size: 14px;
+    }
+    header{
+        flex-wrap: wrap;
+        gap:20px;
+        padding:16px 5% 16px 5%;
+    }
+    footer{
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 10px;
+        padding:48px 5% 16px 5%;
+    }
+    header .logo{
+        min-width:80px;
+    }
+    header nav{
+        flex-wrap: wrap;
+        flex-grow:1;
+        gap:22px;
+    }
+    nav i{
+        font-size: 27px;
+        color:#FF9F45;
+    }
+    .nav-set-1, .nav-set-2{
+        gap: 18px;
+    }
+    .nav-set-2 div i{
+        color: white;
+    }
+    .nav-set-2{
+        justify-content: flex-end;
+    }
+    .nav-set-2 .submit{
+        background-color: inherit;
+        padding: 0;
+        box-shadow:none;
+        transition: none;
+    }
+    .nav-set-2 .submit:hover{
+        padding: 0;
+        box-shadow: none;
+        transition: none;
+    }
+    .nav-set-2 .submit i, .nav-set-2 div{
+        display: block;
+    }
+    .nav-set-2 .submit span{
+        display: none;
+    }
+    #hero img{
+        margin-bottom: 35px;
+        min-width: 250px;
+    }
+    #hero p{
+        line-height: 1.2;
+    }
+    section, .singlearticle{
+        padding:80px 5% 80px 5%;
+    }
+    .messages{
+        padding:8px 25px 8px 25px;
+        margin: 20px 5% 0 5%;
+    }
+    .alltasks article{
+    padding:32px 32px 32px 32px;
+    margin:32px 0 32px 0;
+    }
+    .singletask > p{
+        margin: 40px, 0, 64px, 0;
+    }
+    .alltasks p{
+        margin-bottom: 28px;
+    }
+    .alltasks article > div{
+        margin-bottom: 12px;
+    }
+    .alltasks article i, .singletask i{
+        font-size:16px;
+    }
+    .alltasks article span, .singletask span{
+        margin-left: 8px;
+    }
+    .about-img{
+        width: 35%;
+    }
+
+    .flex-div{
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
+    #about .flex-div, #features .flex-div{
+        gap: 72px;
+    }
+
+    .alltasks .flex-div{
+        margin-bottom:48px;
+        justify-content:start;
+    }
+
+    .alltasks .flex-div > h1{
+        flex-basis:80%;
+    }
+    @keyframes newbutton{
+        0%{
+            padding: 14px 28px 14px 28px;
+        }
+        100%{
+            padding:12px 25px 12px 25px;
+        }
+    }
+
+    #features i{
+        font-size:40px;
+        margin: 28px 0 36px 0;
+    }
+    
+    .submit{
+        font-weight: 700;
+        padding: 12px 25px 12px 25px;
+    }
+
+    .submit:hover{
+        padding: 10px 25px 10px 25px;
+    }
+
+    #cta p{
+        width:80%;
+        margin-bottom: 40px;
+    }
+    
+    label{
+        margin-bottom: 12px;
+    }
+    input{
+        padding: 8px 12px;
+        margin-bottom:32px;
+    }
+
+    #create form, #update form{
+        width:70%;
+    }
+
+    .centerpage{
+        width: 360px;
+        margin-top: 16px;
+        margin-bottom:16px;
+        padding:48px 48px 48px 48px;
+    }
+    .centerpage img{
+        width: 100px;
+        margin-bottom: 56px;
+    }
+    .centerpage ul{
+        margin-top: -16px;
+        margin-bottom: 32px;
+    }
+
+    .centerpage button{
+        margin-top: 24px;
+    }
+    
+    .centerpage input{
+        padding: 4px 8px;
+    }
+    
+    .centerpage label{
+        margin-bottom: 8px;
+    }
+}

@@ -1,0 +1,180 @@
+@media screen and (max-width: 767px) {
+    html{
+        font-size: 16px;
+    }
+    body{
+        line-height: 1.7;
+    }
+    h1{
+        font-size: 40px;
+    }
+    h2{
+        font-size: 30px;
+    }
+    h3{
+        font-size:24px;
+    }
+    span{
+        font-size: 14px;
+    }
+    header{
+        justify-content: space-between;
+        padding:12px 6% 12px 6%;
+    }
+    footer{
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 15px;
+        padding:40px 6% 12px 6%;
+    }
+    header .logo{
+        min-width:60px;
+    }
+    nav i{
+        font-size: 24px;
+    }
+    .nav-set-1{
+        display: none;
+    }
+    .nav-set-2{
+        justify-content: flex-end;
+    }
+    .nav-set-2 .submit i, .nav-set-2 div{
+        display: block;
+    }
+    .nav-set-2 .submit span{
+        display: none;
+    }
+    #hero img{
+        margin-bottom: 30px;
+        min-width: 200px;
+    }
+    #hero p{
+        line-height: 1.1;
+    }
+    section, .singlearticle{
+        padding:64px 6% 64px 6%;
+    }
+    .messages{
+        padding:6px 20px 6px 20px;
+        margin: 20px 6% 0 6%;
+    }
+    .alltasks article{
+    padding:28px 28px 28px 28px;
+    margin:28px 0 28px 0;
+    }
+    .singletask > p{
+        margin: 36px, 0, 56px, 0;
+    }
+    .alltasks p{
+        margin-bottom: 24px;
+    }
+    .alltasks article > div{
+        margin-bottom: 10px;
+    }
+    .alltasks article i, .singletask i{
+        font-size:14px;
+    }
+    .alltasks article span, .singletask span{
+        margin-left: 6px;
+    }
+    .about-img{
+        min-width:250px;
+        width: 30%;
+        margin: auto;
+    }
+
+    .flex-div{
+        text-align: center;
+        flex-direction:row-reverse;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .singletask .flex-div{
+        justify-content:space-between;
+        gap:30px;
+    }
+
+    #about .flex-div, #features .flex-div{
+        gap: 64px;
+    }
+
+    .alltasks .flex-div{
+        text-align: left;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-bottom:40px;
+        justify-content:space-between;
+    }
+
+    .alltasks .flex-div > h1{
+        flex-basis:80%;
+    }
+    @keyframes newbutton{
+        0%{
+            padding: 12px 24px 12px 24px;
+        }
+        100%{
+            padding:10px 22px 10px 22px;
+        }
+    }
+
+    #features i{
+        font-size:36px;
+        margin: 24px 0 32px 0;
+    }
+    
+    .submit{
+        font-weight: 700;
+        padding: 10px 22px 10px 22px;
+    }
+
+    .submit:hover{
+        padding: 8px 22px 8px 22px;
+    }
+
+    #cta p{
+        width:90%;
+        margin-bottom: 36px;
+    }
+    
+    label{
+        margin-bottom: 10px;
+    }
+    input{
+        padding: 6px 10px;
+        margin-bottom:32px;
+    }
+
+    #create form, #update form{
+        width:80%;
+    }
+
+    .centerpage{
+        width: 300px;
+        margin-top: 14px;
+        margin-bottom:14px;
+        padding:42px 42px 42px 42px;
+    }
+    .centerpage img{
+        width: 75px;
+        margin-bottom: 52px;
+    }
+    .centerpage ul{
+        margin-top: -15px;
+        margin-bottom: 30px;
+    }
+
+    .centerpage button{
+        margin-top: 20px;
+    }
+    
+    .centerpage input{
+        padding: 3px 6px;
+    }
+    
+    .centerpage label{
+        margin-bottom: 6px;
+    }
+}
