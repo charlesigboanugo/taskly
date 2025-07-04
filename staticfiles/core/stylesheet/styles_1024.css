@@ -43,9 +43,6 @@
     .nav-set-1, .nav-set-2{
         gap: 18px;
     }
-    .nav-set-2 div i{
-        color: white;
-    }
     .nav-set-2{
         justify-content: flex-end;
     }
@@ -71,7 +68,7 @@
         min-width: 250px;
     }
     #hero p{
-        line-height: 1.2;
+        line-height: 1.5;
     }
     section, .singlearticle{
         padding:80px 5% 80px 5%;
@@ -162,6 +159,7 @@
 
     .centerpage{
         width: 360px;
+	min-width: 40%;
         margin-top: 16px;
         margin-bottom:16px;
         padding:48px 48px 48px 48px;
