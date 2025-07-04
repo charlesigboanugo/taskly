@@ -62,8 +62,13 @@ footer{
     padding:64px 8% 24px 8%;
 }
 header .logo{
- flex-basis: 10%;
- min-width:100px;
+    flex-basis: 10%;
+    min-width:100px;
+    display: flex;
+    align-items: center;
+}
+.mobile-menu{
+    display: none;
 }
 header img{
     width: 100%;

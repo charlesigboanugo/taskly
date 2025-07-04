@@ -25,11 +25,34 @@
                         </form>
                     {% else %}
                         <a href="{% url 'login' %}" class="submit"><i class="fa-solid fa-right-to-bracket"></i><span>login</span></a>
-                        <a href="{% url 'register' %}" class="submit"><i class="fa-solid fa-user-plus"></i><span>register</span></a>
+                        <a href="{% url 'register' %}" class="submit"><i class="fa-solid fa-user-plus" style="position: relative; bottom: 3px;"></i><span>register</span></a>
                     {% endif %}
-                    <div><i class="fa-solid fa-burger"></i></div>
+                    <div><i id="burger" class="fa-solid fa-burger"></i></div>
                 </div>
             </nav>
+            <div class="mobile-menu">
+                <ul>
+                    <li><a href="{% url 'tasks:index' %}">Tasks</a></li>
+                    <li><a href="{% url 'tasks:pendingTasks' %}">Pending</a></li>
+                    <li><a href="{% url 'tasks:runningTasks' %}">Running</a></li>
+                    <li><a href="{% url 'tasks:scheduledTasks' %}">Scheduled</a></li>
+                    <li><a href="{% url 'tasks:completedTasks' %}">Completed</a></li>
+                </ul>
+                
+                <div>
+                    {% if request.user.is_authenticated %}
+                        <form action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="submit">logout</button>
+                        </form>
+                    {% else %}
+                        <div>
+                            <a href="{% url 'login' %}" class="submit">login</a>
+                            <a href="{% url 'register' %}" class="submit">register</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
         </header>
         {% if messages %}
             <section class="messages group2">
@@ -38,14 +61,6 @@
                 {% endfor %}
             </section>
         {% endif %}
-        <script async>
-            window.onload = () => {
-                setTimeout(() => {
-                    const msg = document.querySelector('.messages');
-                    if (msg) msg.classList.add('hide');
-                }, 5000);
-            };
-        </script>
         <main>
             {% block content %}{% endblock %}
         </main>

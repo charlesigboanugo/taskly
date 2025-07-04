@@ -1,10 +1,10 @@
 @media screen and (max-width: 414px) {
-    #about, #features h2{
+    #about{
         text-align:left;
     }
 
     header .logo{
-        min-width:40px;
+        min-width: 48px;
     }
     
     #hero img{
@@ -26,7 +26,8 @@
     }
 
     .centerpage{
-        width: 90%;
+        width: 60%;
+	    min-width: 300px;
     }
     .centerpage img{
         width: 80px;
