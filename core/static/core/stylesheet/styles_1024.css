@@ -38,7 +38,7 @@
     }
     nav i{
         font-size: 30px;
-        color:#FF9F45;
+        color: var(--color-primary);
     }
     .nav-set-1, .nav-set-2{
         gap: 20px;

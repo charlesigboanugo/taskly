@@ -1,10 +1,6 @@
-window.onload = () => {
-    setTimeout(() => {
-        const msg = document.querySelector('.messages');
-        if (msg) msg.classList.add('hide');
-    }, 5000);
-
+ export function initMobilemenu() {
     const burger = document.getElementById("burger");
+
     burger.addEventListener("click", () => {
         const mobile_menu = document.querySelector('.mobile-menu');
         mobile_menu.classList.toggle('mobile-menu-active'); 
@@ -14,4 +10,5 @@ window.onload = () => {
             burger.classList.replace('fa-xmark', 'fa-burger');
         }
     });
-};
+ }
+ 
