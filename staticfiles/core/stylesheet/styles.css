@@ -15,7 +15,7 @@
     --shadow-hover-primary-2:rgba(255, 159, 69, 0.2);
 }
 [data-theme="light"] {
-    --color-bg: #FAF8FF;
+    --color-bg: #E5DFF9;
     --color-surface:#FFFFFF;
     --color-primary: var(--brand-color);
     --color-accent:#FFB86B;
@@ -27,11 +27,16 @@
     --shadow-hover-primary:rgba(255, 159, 69, 0.5);
     --shadow-hover-primary-2:rgba(255, 159, 69, 0.2);
 }
-html{
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+}
+html{
     font-size: 18px;
 }
 body{
+    margin:0;
     color: var(--color-text);
     line-height:1.7;
     font-weight: 400;
@@ -373,4 +378,7 @@ footer{
 }
 .theme-active{
     color: var(--brand-color);
+}
+button{
+    border: none;
 }
