@@ -398,7 +398,7 @@ button{
     display:flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 85vh;
     text-align:center;
 }
 .center-view p{
@@ -407,4 +407,5 @@ button{
 }
 .four-o-four{
     font-size: 100px;
+    line-height: 1.2;
 }
