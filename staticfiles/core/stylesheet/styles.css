@@ -399,6 +399,7 @@ button{
     align-items: center;
     justify-content: center;
     height: 100vh;
+    text-align:center;
 }
 .center-view p{
     font-size: 40px;
