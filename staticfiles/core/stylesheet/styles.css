@@ -404,8 +404,10 @@ button{
 .center-view p{
     font-size: 30px;
     line-height: 1.6;
+    margin-bottom: 30px;
 }
 .four-o-four{
+    font-weight: 900;
     font-size: 100px;
     line-height: 1.2;
 }
