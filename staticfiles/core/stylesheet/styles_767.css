@@ -136,6 +136,8 @@
 
     .singletask .flex-div{
         flex-direction: row;
+        justify-content: space-between;
+        gap:25px;
     }
 
     #about .flex-div, #features .flex-div{

@@ -43,13 +43,13 @@
                         <button type="submit" class="submit">complete</button>
                     </form>
                 {% endif%}
-                {% if task.is_completed is False %}
-                    <a href="{%url 'tasks:updateTask' task.pk %}" class="submit">update</a>
-                {% endif %}
                 <form action="{%url 'tasks:deleteTask' task.pk %}" method="post">
                     {% csrf_token %}
                     <button type="submit" class="submit">delete</button>
                 </form>
+                {% if task.is_completed is False %}
+                    <a href="{%url 'tasks:updateTask' task.pk %}" class="submit">update</a>
+                {% endif %}
             </div>
         </article>
 {% endblock %}
