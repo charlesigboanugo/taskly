@@ -1,6 +1,7 @@
 {% load static %}
 {% include 'shared/header.html' %}
     <title>Login - Taskly</title>
+    <script src="{% static 'core/scripts/login_register_theme.js' %}" type="module" crossorigin="anonymous" defer></script>
 </head>
 <body>
     <div class="centerpage">
@@ -11,5 +12,4 @@
             <button type="submit" class="submit">Login</button>
         </form>
     </div>
-    <script src="{% static 'core/scripts/login_register_theme.js' %}" type="module" crossorigin="anonymous" async></script>
 {% include 'shared/footer.html' %}

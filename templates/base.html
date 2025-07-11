@@ -2,6 +2,8 @@
 {% include 'shared/header.html' %}
 
 <title>{% block title %}{% endblock %} - Taskly</title>
+<script src="{% static 'core/scripts/app.js' %}" type="module" crossorigin="anonymous" defer></script>
+
 </head>
     <body>
         <header class="group2">
@@ -65,13 +67,11 @@
             {% block content %}{% endblock %}
         </main>
         <footer style="text-align: center;">
-            <div><span>Contact: charlesigboanugo033@gmail.com</span></div>
-            <div><span>&copy; 2025 Charles Igboanugo. All rights reserved.</span></div>
+            <div class="flex-div"><span>Contact: charlesigboanugo033@gmail.com</span></div>
+            <div class="flex-div"><span>&copy; 2025 Charles Igboanugo. All rights reserved.</span></div>
             <div class="theme-icons-box">
                 <i class="fa-solid fa-sun theme-icon" data-toggle="theme-light"></i>
                 <i class="fa-solid fa-moon theme-icon theme-active" data-toggle="theme-dark"></i>
             </div>
         </footer>
-        <script src="{% static 'core/scripts/app.js' %}" type="module" crossorigin="anonymous" async></script>
-
 {% include 'shared/footer.html' %}

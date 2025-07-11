@@ -28,6 +28,7 @@
     }
     .mobile-menu{
         position:absolute;
+        z-index: 5000;
         top:100%;
         width:100%;
         left: 0;
@@ -59,7 +60,7 @@
         flex-direction: column;
         justify-content: space-between;
         gap: 15px;
-        padding:40px 6% 12px 6%;
+        padding:52px 6% 12px 6%;
     }
     header .logo{
         min-width:64px;
@@ -90,7 +91,7 @@
     }
     #hero img{
         margin-bottom: 30px;
-	width:60%;
+	    width:60%;
         padding-top:5vh;
         min-width:250px;
     }

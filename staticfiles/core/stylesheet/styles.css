@@ -357,9 +357,11 @@ input{
 }
 
 footer{
+    border-top: solid 2px var(--color-border);
     position: relative;
 }
 .theme-icons-box{
+    border: solid;
     background-color: #000000;
     position: absolute;
     right: 5%;
