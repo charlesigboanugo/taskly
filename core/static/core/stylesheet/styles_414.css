@@ -20,6 +20,11 @@
         flex-direction:column;
         justify-content: center;
     }
+
+    .singletask .flex-div{
+        flex-direction: row;
+        justify-content: space-between;
+    }
    
     #cta p{
         width:100%;
