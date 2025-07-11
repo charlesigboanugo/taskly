@@ -11,24 +11,24 @@ function defaultTheme(){
 }
 
 function darkMode(){
-        const data_theme = pageBody.getAttribute("data-theme");
-        if (data_theme == "light" || data_theme == null){
-            pageBody.setAttribute("data-theme", "dark");
-            light_toggle.classList.toggle("theme-active", false);
-            dark_toggle.classList.toggle("theme-active", true);
-            storeTheme("dark");
-        }
+    const data_theme = pageBody.getAttribute("data-theme");
+    if (data_theme == "light" || data_theme == null){
+        pageBody.setAttribute("data-theme", "dark");
+        light_toggle.classList.toggle("theme-active", false);
+        dark_toggle.classList.toggle("theme-active", true);
+        storeTheme("dark");
     }
+}
 
-    function lightMode(){
-        const data_theme = pageBody.getAttribute("data-theme");
-        if (data_theme == "dark" || data_theme == null){
-            pageBody.setAttribute("data-theme", "light");
-            dark_toggle.classList.toggle("theme-active", false);
-            light_toggle.classList.toggle("theme-active", true);
-            storeTheme("light");
-        }
+function lightMode(){
+    const data_theme = pageBody.getAttribute("data-theme");
+    if (data_theme == "dark" || data_theme == null){
+        pageBody.setAttribute("data-theme", "light");
+        dark_toggle.classList.toggle("theme-active", false);
+        light_toggle.classList.toggle("theme-active", true);
+        storeTheme("light");
     }
+}
 
 export function setTheme(){
     const data_theme = defaultTheme();
