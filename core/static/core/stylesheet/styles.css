@@ -398,6 +398,7 @@ button{
     display:flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 .center-view p{
     font-size: 40px;
