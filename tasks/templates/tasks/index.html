@@ -4,7 +4,7 @@
 
 {% block content %}
     <section class="alltasks">
-	    <div class="flex-div"><h1>all tasks</h1> <a href="{% url 'tasks:createTask' %}" class="submit">New</a></div>
+	    <div class="flex-div"><h1>{{ kind }} tasks</h1> <a href="{% url 'tasks:createTask' %}" class="submit">New</a></div>
         {% for task in tasks_list %}
             <article class="group2">
                 {% if task.is_completed %}
@@ -23,6 +23,10 @@
                 </p>
                 <a href="{% url 'tasks:singleTask' task.pk %}" class="submit">view task</a>
             </article>
+        {% empty %}
+            <div class="no-task">
+                <p class="no-task-text">No Tasks Found </p>
+            </div>
         {% endfor %}
     </section>
 {% endblock %}

@@ -18,7 +18,7 @@ def index(request):
     user_id = request.user.pk
     now = date.today()
     tasks_list = Task.objects.filter(user_id=user_id)
-    return render(request, "tasks/index.html", {"tasks_list": tasks_list, "now": now})
+    return render(request, "tasks/index.html", {"kind": "all", "tasks_list": tasks_list, "now": now})
 
 @login_required
 def createTask(request):
@@ -119,7 +119,7 @@ def completedTasks(request):
     now = date.today()
     user_id = request.user.pk
     completed = Task.objects.filter(user_id=user_id, is_completed=True)
-    return render(request, "tasks/index.html", {"tasks_list": completed, "now": now})
+    return render(request, "tasks/index.html", {"kind": "completed", "tasks_list": completed, "now": now})
 
 @login_required
 def pendingTasks(request):
@@ -127,7 +127,7 @@ def pendingTasks(request):
     user_id = request.user.pk
     now = date.today()
     pending = Task.objects.filter(user_id=user_id, due_at__lte=now, is_completed=False)
-    return render(request, "tasks/index.html", {"tasks_list": pending, "now": now})
+    return render(request, "tasks/index.html", {"kind": "pending", "tasks_list": pending, "now": now})
 
 @login_required
 def runningTasks(request):
@@ -135,7 +135,7 @@ def runningTasks(request):
     user_id = request.user.pk
     now = date.today()
     pending = Task.objects.filter(user_id=user_id, due_at__gt=now, start_at__lte=now, is_completed=False)
-    return render(request, "tasks/index.html", {"tasks_list": pending, "now": now})
+    return render(request, "tasks/index.html", {"kind": "running", "tasks_list": pending, "now": now})
 
 @login_required
 def scheduledTasks(request):
@@ -143,4 +143,4 @@ def scheduledTasks(request):
     user_id = request.user.pk
     now = date.today()
     scheduled = Task.objects.filter(user_id=user_id, due_at__gt=now, start_at__gt=now, is_completed=False)
-    return render(request, "tasks/index.html", {"tasks_list": scheduled, "now": now})
+    return render(request, "tasks/index.html", {"kind": "scheduled", "tasks_list": scheduled, "now": now})
