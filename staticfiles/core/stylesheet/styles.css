@@ -386,12 +386,12 @@ button{
 }
 .no-task{
     display: flex;
-    height:50vh;
+    height:40vh;
     align-items: center;
     justify-content: center;
 }
 .no-task-text{
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 600;
 }
 .center-view{
