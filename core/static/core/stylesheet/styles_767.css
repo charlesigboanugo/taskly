@@ -86,7 +86,7 @@
         display:flex;
         flex-direction: column;
         justify-content: space-around;
-        min-height:65vh;
+        min-height:70vh;
     }
     #hero img{
         margin-bottom: 30px;
