@@ -207,7 +207,7 @@ section, .singlearticle{
 }	
 .alltasks .flex-div{
     margin-bottom:64px;
-    align-items: center;
+    align-items: flex-end;
     justify-content:start;
 }
 
