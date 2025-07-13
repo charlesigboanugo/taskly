@@ -160,19 +160,18 @@
     }
 
     .centerpage{
-        width: 360px;
-	    min-width: 40%;
-        margin-top: 16px;
-        margin-bottom:16px;
-        padding:48px 48px 48px 48px;
+	    width: 60%;
+        max-width: 500px;
+        margin-top: 56px;
     }
     .centerpage img{
-        width: 100px;
+        width: 150px;
         margin-bottom: 56px;
     }
     .centerpage ul{
         margin-top: -16px;
         margin-bottom: 32px;
+        font-size: 15px;
     }
 
     .centerpage button{

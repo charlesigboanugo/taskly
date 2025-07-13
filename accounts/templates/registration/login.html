@@ -1,6 +1,10 @@
 {% load static %}
 {% include 'shared/header.html' %}
     <title>Login - Taskly</title>
+    <script type="module">
+        import { initMessages } from "{% static 'core/scripts/messages.js' %}";
+        initMessages();
+    </script>
 </head>
 <body>
     <div class="centerpage">
