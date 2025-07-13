@@ -4,28 +4,16 @@
 
 {% block content %}
         <article class="singlearticle singletask">
-            <h1>{{task.title}}</h1>
             {% if task.is_completed %}
-                <div>
-                    <i class="fa-solid fa-circle-check"></i><span>completed</span>
-                    <p>Completed on {{ task.due_at }}</p>
-                </div>
+                <span>Completed on {{ task.due_at }}</span>
             {% elif  task.start_at > now %}
-                <div>
-                    <i class="fa-solid fa-bell"></i><span>scheduled</span>
-                    <p>Starts on {{ task.start_at }}</p>
-                </div>
+                <span>Starts on {{ task.start_at }}</span>
             {% elif task.due_at > now and now >= task.start_at %}
-                <div>
-                    <i class="fa-solid fa-arrows-rotate"></i><span>running</span>
-                    <p>Ends on {{ task.due_at }}</p>
-                </div>
+                <span>Ends on {{ task.due_at }}</span>
             {% else %}
-                <div>
-                    <i class="fa-solid fa-hourglass-half"></i><span>pending</span>
-                    <p>Past due - {{ task.due_at }}</p>
-                </div>
+                <span>Past due - {{ task.due_at }}</span>
             {% endif %}
+            <h1>{{task.title}}</h1>
             <p>{{task.description}}</p>
             <!--<section>
                 <h3>stages</h3>
@@ -48,7 +36,7 @@
                     <button type="submit" class="submit">delete</button>
                 </form>
                 {% if task.is_completed is False %}
-                    <a href="{%url 'tasks:updateTask' task.pk %}" class="submit">update</a>
+                    <a href="{%url 'tasks:updateTask' task.pk %}"><button  class="submit">update</button></a>
                 {% endif %}
             </div>
         </article>

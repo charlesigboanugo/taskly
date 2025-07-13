@@ -174,27 +174,37 @@ section, .singlearticle{
     margin:40px 0 40px 0;
     border-radius: 20px;
 }
-.singletask > p{
-    margin: 48px, 0, 72px, 0;
+
+.singletask > span {
+    margin-bottom: 10px;
 }
+
 .singletask{
+    text-align: center;
     text-transform: capitalize;
 }
-.singletask p{
+
+.singletask > p{
+    margin: 72px 0 120px 0;
     text-transform: none;
 }
+
+.singletask > p::first-letter{
+    text-transform: capitalize;
+}
+
 .alltasks p{
     margin-bottom: 32px;
 }
 .alltasks article > div{
     margin-bottom: 16px;
 }
-.alltasks article i, .singletask i{
+.alltasks article i{
     display: inline-block;
     color: var(--color-accent);
     font-size:20px;
 }
-.alltasks article span, .singletask span{
+.alltasks article span{
     display: inline-block;
     margin-left: 10px;
 }
@@ -270,6 +280,7 @@ section, .singlearticle{
     box-shadow: 0 0 12px var(--shadow-primary), 0 0 24px var(--shadow-primary-2);
     transition: box-shadow 0.3s ease;
 }
+
 .submit:hover{
     padding: 12px 30px 12px 30px;
     box-shadow: 0 0 16px var(--shadow-hover-primary), 0 0 32px var(--shadow-hover-primary-2);
@@ -328,7 +339,7 @@ input{
     width:100%;
 }
 .centerpage{
-    width: 50%;
+    width: 40%;
     max-width: 900px;
     margin: auto;
     margin-top: 64px;

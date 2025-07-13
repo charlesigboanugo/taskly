@@ -85,7 +85,7 @@
         margin:32px 0 32px 0;
     }
     .singletask > p{
-        margin: 40px, 0, 64px, 0;
+        margin: 56px 0 96px 0;
     }
     .alltasks p{
         margin-bottom: 28px;
@@ -93,10 +93,10 @@
     .alltasks article > div{
         margin-bottom: 12px;
     }
-    .alltasks article i, .singletask i{
+    .alltasks article i{
         font-size:16px;
     }
-    .alltasks article span, .singletask span{
+    .alltasks article span{
         margin-left: 8px;
     }
     .about-img{
