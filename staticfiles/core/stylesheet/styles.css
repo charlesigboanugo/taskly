@@ -4,6 +4,7 @@
 [data-theme="dark"] {
     --color-bg: #1E1B2E;
     --color-surface:#25213A;
+    --color-alt-bg:#393069;
     --color-primary: var(--brand-color);
     --color-accent:#BB86FC;
     --color-text: #FFFFFF;
@@ -154,11 +155,11 @@ section, .singlearticle{
     list-style: none;
     margin-top: 30px;
     padding: 15px 10px 15px 10px;
-    background-color: var(--color-surface);
 }
 .messages, .errorlist{
     transition: display 0.6s ease-out;
     text-align:center;
+    background-color: var(--color-alt-bg);
 }
 .messages{
     padding:10px 30px 10px 30px;
